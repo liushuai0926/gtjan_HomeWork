@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message SQMsg{
+   int32 MsgType = 1;  //消息头
+   string OrigTime =2;      //数据生成时间
+   int32 ChannelNo =3;     //频道代码
+   int32 MDStreamID = 4;    //行情类别 010,020,030,040
+   int32 SecurityID = 5;      //证券代码
+   int32 SecurityIDSource =6;    //证券代码源
+   string TradingPhaseCode = 7;  //产品所属的交易阶段代码
+   double PreClosePx = 8;        //昨收价
+   int32 NumTrades =9;           //成交笔数
+   int32 TotalVolumeTrade =10;    //成交总量
+   double TotalValueTrade =11;       //成交总金额
+
+   message CentralizedBiddingSQMsg{
+       int32 NoMDEntries=1;   //行情条目个数
+       string MDEtryType =2;    //行情条目类别
+       double MDEntryPx =3;      //价格
+       int32 MDEntrySize =4;    //数量
+       int32 MDPriceLevel = 5;  //买卖档位
+       int32 NumberOfOrders= 6;   //价位总委托笔数
+       int32 NoOrders = 7;         //价位揭示委托笔数
+       int32 OrderQty =8;          //委托数量
+   }
+}
+
+
+

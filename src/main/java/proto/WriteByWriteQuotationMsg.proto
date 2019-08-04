@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message WBWQMsg{
+    int32 MsgType = 1;  //消息头
+    int32 ChannelNo =2;     //频道代码
+    int32 AppSeqNum =3;     //消息记录号
+    int32 MDStreamID = 4;    //行情类别 300192
+    string SecurityID = 5;      //证券代码
+    int32 SecurityIDSource =6;    //证券代码源
+    double Price =7;          //委托价格
+    int32 OrderQty =8;         //委托数量
+    string Side=9;          //买卖方向
+    string TransactTime = 10; //委托时间
+
+    message CentralizedBiddingWBWQMsg{
+        string OrderType =1;  //订单类别
+    }
+
+}
+
+
+
+
